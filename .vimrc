@@ -2,6 +2,7 @@ call plug#begin()
 
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/goyo.vim'
+Plug 'ayu-theme/ayu-vim' 
 
 call plug#end()
 
@@ -52,3 +53,17 @@ set statusline +=0x%04B\ %*          "character under cursor
 "
 autocmd BufRead,BufNewFile   *.txt setlocal textwidth=64
 
+function! WritingNotes() 
+        let path_vector = split(expand('%'), '/')
+        let i = len(path_vector)
+        let note_path = "~/Documents/writing/notes/notes-" . path_vector[i-1]
+        execute 'belowright split ' . note_path
+        resize 15
+endfunction
+
+command! WritingNotes call WritingNotes()
+
+" theme
+set termguicolors     " enable true colors support
+let ayucolor="light"
+colorscheme ayu

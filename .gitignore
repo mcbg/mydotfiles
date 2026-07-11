@@ -9,4 +9,5 @@
 !.inputrc
 !.vim/
 !.vim/**
-
+.vim/plugged
+.vim/.netrwhist
