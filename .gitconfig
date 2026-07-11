@@ -1,0 +1,12 @@
+[user]
+	name = Michael C. B. Galanakis
+	email = 26263635+mcbg@users.noreply.github.com
+[init]
+	defaultBranch = main
+[alias]
+	st = status
+	cim = commit -m
+	lg = log --oneline
+[merge]
+	tool = vimdiff
+

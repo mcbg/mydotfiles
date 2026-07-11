@@ -1,0 +1,11 @@
+# ignore everything
+*
+
+# except this:
+!.gitignore
+!.gitconfig
+!.vimrc
+!.bashrc
+!.inputrc
+!.vim/autoload/plug.vim
+
