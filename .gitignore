@@ -7,5 +7,6 @@
 !.vimrc
 !.bashrc
 !.inputrc
-!.vim/autoload/plug.vim
+!.vim/
+!.vim/**
 
