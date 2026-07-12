@@ -1,14 +1,23 @@
 call plug#begin()
 
-Plug 'tpope/vim-sensible'
+"Plug 'tpope/vim-sensible'
 Plug 'junegunn/goyo.vim'
 Plug 'ayu-theme/ayu-vim' 
 
 call plug#end()
 
+" OS dependent setting
+" OSX
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed 
+
+" Linux
+else
+  set clipboard=unnamedplus 
+endif
+
 " Settings
 set linebreak
-set clipboard=unnamedplus
 set noswapfile
 
 " Keybindings
@@ -36,6 +45,8 @@ set expandtab
 set wildmenu
 set undodir=/tmp/.vim-undo-dir
 set undofile
+set number
+set numberwidth=20
 
 " Status line
 set statusline=
@@ -51,8 +62,8 @@ set statusline +=0x%04B\ %*          "character under cursor
 
 " text files (fiction and poetry focused)
 "
-autocmd BufRead,BufNewFile   *.txt setlocal textwidth=64
-
+autocmd BufRead,BufNewFile *.txt setlocal textwidth=64 
+    
 function! WritingNotes() 
         let path_vector = split(expand('%'), '/')
         let i = len(path_vector)
